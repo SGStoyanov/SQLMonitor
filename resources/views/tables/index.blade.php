@@ -89,13 +89,7 @@
                 </div>
                 {!! Form::close() !!}
             </div>
-            <script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker1').datetimepicker({
-                        sideBySide: true
-                    });
-                });
-            </script>
+            <script type="text/javascript" src="scripts/datetimepicker.js"></script>
         </div>
     </div>
 @stop
