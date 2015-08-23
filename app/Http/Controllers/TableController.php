@@ -65,18 +65,19 @@ class TableController extends Controller
         return view('tables.index', compact('tables'));
     }
 
+    /**
+     * Filters the extracted data
+     */
     public function filterTables() {
         $tables = Table::all() -> take(300);
         $filterDate = Request::get('filterDate');
 
         if($filterDate) {
-//            $tables = Table::all() -> where('collected_on', $filterDate) -> take(300);
-//            $filterEndDate = date("Y-m-d" ,$filterDate) . " 23:59:59";
-//            $tables = Table::whereBetween('collected_on', array($filterDate, $filterEndDate)) -> get();
+            $filterDateFormatted = date( 'Y-m-d H:i:s', strtotime($filterDate) );
+            $tables = Table::whereBetween('collected_on', array($filterDateFormatted, Carbon::now())) -> get() -> take(300);
         }
 
-//        return view('tables.index', compact('tables'));
-        return dd($filterDate);
+        return view('tables.index', compact('tables'));
     }
 
     /**
