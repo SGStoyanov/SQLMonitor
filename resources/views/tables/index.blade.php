@@ -62,7 +62,7 @@
                             <td>{{ $table -> id }}</td>
                             <td>{{ $table -> table_name }}</td>
                             <td>{{ $table -> size }}</td>
-                            <td>{{ $table -> collected_on  }}</td>
+                            <td>{{ date( "m/d/Y g:i a", strtotime($table -> collected_on) ) }}</td>
                         </tr>
                     @endforeach
                 @endif
