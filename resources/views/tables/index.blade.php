@@ -75,7 +75,7 @@
         <div class="row">
             <div class='col-sm-12'>
                 {!! Form::open(['url' => 'tables.filter']) !!}
-                {!! Form::label('filterDate', 'Filter by Date', array('class' => 'label label-default')) !!}
+                {!! Form::label('filterDate', 'Filter after Date', array('class' => 'label label-default')) !!}
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         {!! Form::text('filterDate', null, array('class' => 'form-control')) !!}
@@ -91,7 +91,9 @@
             </div>
             <script type="text/javascript">
                 $(function () {
-                    $('#datetimepicker1').datetimepicker();
+                    $('#datetimepicker1').datetimepicker({
+                        sideBySide: true
+                    });
                 });
             </script>
         </div>
