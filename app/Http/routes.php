@@ -16,6 +16,11 @@ Route::get('/', 'HomeController@index');
 Route::get('contact', 'HomeController@contact');
 
 Route::get('tables', 'TableController@index');
-
 Route::post('tables.sort', 'TableController@sortTables');
 Route::post('tables.filter', 'TableController@filterTables');
+Route::get('tables/show/{id}', 'TableController@show');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);

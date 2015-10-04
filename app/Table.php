@@ -9,7 +9,7 @@ class Table extends Model
     protected $table = 'zabbix_tables';
 
     protected $fillable = [
-        'id',
+        //'id',
         'table_name',
         'size',
         'collected_on'
